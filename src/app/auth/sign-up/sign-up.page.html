@@ -1,0 +1,118 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Crear una cuenta</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="header-container">
+        <!-- <h1>AdoptApp</h1> -->
+        <p>¡Registrate para comenzar tu búsqueda de un nuevo compañero!</p>
+    </div>
+
+    <form [formGroup]="signUpForm">
+        <ion-grid>
+            <ion-row>
+                <ion-col size="12">
+                    <ion-item>
+                        <ion-label position="floating">Nombre(s)</ion-label>
+                        <ion-input formControlName="fname" placeholder="Shaggy"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col size="12">
+                    <ion-item>
+                        <ion-label position="floating">Apellidos</ion-label>
+                        <ion-input formControlName="lname" placeholder="Rogers"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col size="12">
+                    <ion-item>
+                        <ion-label position="floating">Dirección</ion-label>
+                        <ion-input formControlName="address" placeholder="Calle Fantasma 123, Crystal Cove"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col size="12">
+                    <ion-item>
+                        <ion-label position="floating">Fecha de nacimiento</ion-label>
+                        <ion-datetime formControlName="birthday" displayFormat="DD MM YYYY" placeholder="Ingresa una fecha"></ion-datetime>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col size="12">
+                    <ion-item>
+                        <ion-label position="floating">Número de contacto</ion-label>
+                        <ion-input formControlName="phone" placeholder="5557266293"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col size="12">
+                    <ion-item>
+                        <ion-label position="floating">Nombre de usuario</ion-label>
+                        <ion-input formControlName="username" placeholder="Zoinks01"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col size="12">
+                    <ion-item>
+                        <ion-label position="floating">Email</ion-label>
+                        <ion-input formControlName="email" placeholder="shaggyr@mystery.com"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col size="12">
+                    <ion-item class="password">
+                        <!-- <ion-label position="floating">Contraseña</ion-label> -->
+                        <ion-input formControlName="password" placeholder="Contraseña" [type]="showPassword ? 'text' : 'password'" clearOnEdit="false"></ion-input>
+                        <button (click)="onPasswordToggle()" ion-button clear small item-end icon-only>
+                            <ion-icon [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+                        </button>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col size="12">
+                    <ion-item class="password">
+                        <!-- <ion-label position="floating">Confirmar Contraseña</ion-label> -->
+                        <ion-input formControlName="confirmPassword" placeholder="Confirmar contraseña" [type]="showConfirmedPassword ? 'text' : 'password'" clearOnEdit="false"></ion-input>
+                        <button (click)="onConfirmPasswordToggle()" ion-button clear small item-end icon-only>
+                            <ion-icon [name]="showConfirmedPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+                        </button>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col size="12">
+                    <ion-button color="primary" expand="block" fill="solid" (click)="onSubmit()">Registrarse
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="12">
+                    <ion-button color="primary" expand="block" fill="none" (click)="goToLogin()">¿Ya tienes una cuenta? ¡Inicia sesión!</ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+</ion-content>
