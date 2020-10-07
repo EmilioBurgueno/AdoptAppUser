@@ -13,29 +13,29 @@ export class AuthService {
   user$: Observable<any>;
 
   constructor(private afa: AngularFireAuth,
-              private userService: UserService) {
-                this.user$ = this.afa.authState.pipe(
-                  switchMap(user => {
-                    if (user) {
-                      return this.userService.getUser(user.uid);
-                    } else {
-                      return of(null);
-                    }
-                  })
-                );
-              }
+    private userService: UserService) {
+    this.user$ = this.afa.authState.pipe(
+      switchMap(user => {
+        if (user) {
+          return this.userService.getUser(user.uid);
+        } else {
+          return of(null);
+        }
+      })
+    );
+  }
 
 
   login(email: string, password: string): Promise<any> {
-    return this.afa.auth.signInWithEmailAndPassword(email, password);
+    return this.afa.signInWithEmailAndPassword(email, password);
   }
 
   signup(email: string, password: string): Promise<any> {
-    return this.afa.auth.createUserWithEmailAndPassword(email, password);
+    return this.afa.createUserWithEmailAndPassword(email, password);
   }
 
   logout(): Promise<void> {
-    return this.afa.auth.signOut();
+    return this.afa.signOut();
   }
 
   deleteUser(currentPassword) {
@@ -47,14 +47,14 @@ export class AuthService {
     });
   }
 
-  resetPassword(email: string){
-    return this.afa.auth.sendPasswordResetEmail(email);
+  resetPassword(email: string) {
+    return this.afa.sendPasswordResetEmail(email);
   }
 
   reauthenticate(currentPassword: string) {
     var user = firebase.auth().currentUser;
     var cred = firebase.auth.EmailAuthProvider.credential(
-        user.email, currentPassword);
+      user.email, currentPassword);
     return user.reauthenticateWithCredential(cred);
   }
 
