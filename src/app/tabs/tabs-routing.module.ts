@@ -6,16 +6,37 @@ import { TabsPage } from './tabs.page';
 const routes: Routes = [
   {
     path: '',
-    component: TabsPage
+    component: TabsPage,
+    children: [
+      {
+        path: 'profile',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule)
+          }
+        ]
+      },
+      {
+        path: 'feed',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('./feed/feed.module').then(m => m.FeedPageModule)
+          }
+        ]
+      }
+    ],
   },
   {
-    path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
-  }
+    path: '',
+    redirectTo: '/tabs/profile',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }
