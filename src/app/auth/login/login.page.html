@@ -1,8 +1,8 @@
-<ion-header>
+<!-- <ion-header>
     <ion-toolbar>
         <ion-title>Inicia Sesión</ion-title>
     </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
     <div class="header-container">
@@ -10,7 +10,7 @@
         <div class="logo">
             <img src="https://i.ibb.co/h9M02BT/AdoptApp.jpg" width="250" height="250">
         </div>
-        <p>¡Entra ya para para comenzar tu búsqueda de un nuevo compañero!
+        <p class="mb-3 mx-2" style="text-align: center;">¡Entra ya para para comenzar tu búsqueda de un nuevo compañero!
             <p>
     </div>
 
@@ -32,17 +32,17 @@
                     <ion-item class="password">
                         <!-- <ion-label position="floating">Contraseña</ion-label> -->
                         <ion-input formControlName="password" placeholder="Contraseña" [type]="showPassword ? 'text' : 'password'" clearOnEdit="false"></ion-input>
-                        <button (click)="onPasswordToggle()" ion-button clear small item-end icon-only>
+                        <ion-button (click)="onPasswordToggle()" fill="clear">
                             <ion-icon [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
-                        </button>
+                        </ion-button>
                     </ion-item>
                 </ion-col>
             </ion-row>
             <ion-row class="login">
                 <ion-col size="12">
-                    <ion-button size="small" expand="block" fill="solid" color="primary" (click)="onSubmit()">Iniciar Sesión
+                    <ion-button size="small" expand="block" fill="solid" color="primary" (click)="onSubmit()" class="my-2">Iniciar Sesión
                     </ion-button>
-                    <ion-button size="small" class="forget" expand="block" fill="none" color="primary" (click)="forgotPassword()">¿Olvidaste tu Contraseña?</ion-button>
+                    <ion-button size="small" class="forget" expand="block" fill="none" color="primary" (click)="forgotPassword()" class="my-2">¿Olvidaste tu Contraseña?</ion-button>
                 </ion-col>
             </ion-row>
         </ion-grid>
