@@ -7,11 +7,11 @@
 <ion-content>
     <div class="header-container">
         <!-- <h1>AdoptApp</h1> -->
-        <div class="logo">
+        <div class="logo" style="padding-left: 20px;">
             <img src="https://i.ibb.co/h9M02BT/AdoptApp.jpg" width="250" height="250">
         </div>
         <p class="mb-3 mx-2" style="text-align: center;">¡Entra ya para para comenzar tu búsqueda de un nuevo compañero!
-            <p>
+        <p>
     </div>
 
 
@@ -31,7 +31,8 @@
                 <ion-col size="12">
                     <ion-item class="password">
                         <!-- <ion-label position="floating">Contraseña</ion-label> -->
-                        <ion-input formControlName="password" placeholder="Contraseña" [type]="showPassword ? 'text' : 'password'" clearOnEdit="false"></ion-input>
+                        <ion-input formControlName="password" placeholder="Contraseña"
+                            [type]="showPassword ? 'text' : 'password'" clearOnEdit="false"></ion-input>
                         <ion-button (click)="onPasswordToggle()" fill="clear">
                             <ion-icon [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
                         </ion-button>
@@ -40,9 +41,11 @@
             </ion-row>
             <ion-row class="login">
                 <ion-col size="12">
-                    <ion-button size="small" expand="block" fill="solid" color="primary" (click)="onSubmit()" class="my-2">Iniciar Sesión
+                    <ion-button size="small" expand="block" fill="solid" color="primary" (click)="onSubmit()"
+                        class="my-2">Iniciar Sesión
                     </ion-button>
-                    <ion-button size="small" class="forget" expand="block" fill="none" color="primary" (click)="forgotPassword()" class="my-2">¿Olvidaste tu Contraseña?</ion-button>
+                    <ion-button size="small" class="forget" expand="block" fill="none" color="primary"
+                        (click)="forgotPassword()" class="my-2">¿Olvidaste tu Contraseña?</ion-button>
                 </ion-col>
             </ion-row>
         </ion-grid>
@@ -52,6 +55,7 @@
 
 <ion-footer>
     <ion-toolbar>
-        <ion-button (click)="goToSignUp()" expand="full" fill="none">¿Nuevo por aquí? ¡Crea una cuenta!</ion-button>
+        <ion-button (click)="goToSignUp()" expand="full" fill="none" style="font-size: 0.75rem;">¿Nuevo por aquí? ¡Crea
+            una cuenta!</ion-button>
     </ion-toolbar>
 </ion-footer>
