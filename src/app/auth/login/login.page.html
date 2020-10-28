@@ -5,16 +5,14 @@
 </ion-header> -->
 
 <ion-content>
-    <div class="header-container">
+    <div>
         <!-- <h1>AdoptApp</h1> -->
-        <div class="logo" style="padding-left: 20px;">
-            <img src="https://i.ibb.co/h9M02BT/AdoptApp.jpg" width="250" height="250">
+        <div class="logo ml-1">
+            <img src="https://i.ibb.co/h9M02BT/AdoptApp.jpg" width="280" height="280">
         </div>
-        <p class="mb-3 mx-2" style="text-align: center;">¡Entra ya para para comenzar tu búsqueda de un nuevo compañero!
-        <p>
+        <!-- <p class="mb-3 mx-2" style="text-align: center;">¡Entra ya para para comenzar tu búsqueda de un nuevo compañero!
+        <p> -->
     </div>
-
-
 
 
     <form [formGroup]="logInForm">
@@ -40,12 +38,26 @@
                 </ion-col>
             </ion-row>
             <ion-row class="login">
+                <ion-col size="4">
+                </ion-col>
+                <ion-col size="8">
+                    <ion-button size="small" class="forget my-0" expand="block" fill="none" color="primary"
+                        style="color: #3232EA; font-size: xx-small" (click)="forgotPassword()">
+                        ¿Olvidaste tu Contraseña?</ion-button>
+                </ion-col>
                 <ion-col size="12">
-                    <ion-button size="small" expand="block" fill="solid" color="primary" (click)="onSubmit()"
-                        class="my-2">Iniciar Sesión
+                    <ion-button size="medium" expand="block" fill="solid" color="primary" (click)="onSubmit()"
+                        class="my-2" style="font-size: x-small">Iniciar
+                        Sesión
                     </ion-button>
-                    <ion-button size="small" class="forget" expand="block" fill="none" color="primary"
-                        (click)="forgotPassword()" class="my-2">¿Olvidaste tu Contraseña?</ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row class="my-5" style=" text-align: center;">
+                <ion-col>
+                    <ion-label style="color: gray; font-size: small">¿Nuevo por aquí? </ion-label>
+                    <ion-label (click)="goToSignUp()" class="forget my-0" expand="block" fill="none" color="primary"
+                        style="color:blue; font-size: small;">¡Crea una
+                        cuenta!</ion-label>
                 </ion-col>
             </ion-row>
         </ion-grid>
@@ -54,8 +66,8 @@
 </ion-content>
 
 <ion-footer>
-    <ion-toolbar>
+    <!-- <ion-toolbar>
         <ion-button (click)="goToSignUp()" expand="full" fill="none" style="font-size: 0.75rem;">¿Nuevo por aquí? ¡Crea
             una cuenta!</ion-button>
-    </ion-toolbar>
+    </ion-toolbar> -->
 </ion-footer>
