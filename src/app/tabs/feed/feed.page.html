@@ -1,32 +1,44 @@
-<ion-header>
-  <ion-toolbar>
-      <ion-title>Adopta</ion-title>
-  </ion-toolbar>
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button>
+                <ion-icon slot="start" name="heart-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+
+        <ion-buttons slot="primary">
+            <ion-button>
+                <ion-icon slot="end" name="funnel-outline"> </ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title class="px-0" style="text-align: center; font-size: medium;">AdoptApp</ion-title>
+
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-      <div *ngFor="let dog of Dogs">
-          <ion-item (click)="openModalDogProfile(dog?.id)" lines="none">
-              <slot name="start">
-                  <ion-avatar>
-                      <img [src]='dog.profilepic'>
-                  </ion-avatar>
-              </slot>
-              <ion-label class="dogsep">
-                  <h3>{{ dog.name }}</h3>
-                  <ion-label>{{ dog.breed }}</ion-label>
-                  <ion-note>{{dog.status}} &middot; {{ dog.sex }} &middot; {{ dog.size }}</ion-note>
-                  <ion-label>
-                      <ion-note>
-                          {{ dog.idPerrera }}
-                      </ion-note>
-                  </ion-label>
-              </ion-label>
-              <ion-note slot="end" class="arrow-icon">
-                  <ion-icon name="chevron-forward-outline"></ion-icon>
-              </ion-note>
-          </ion-item>
-      </div>
-  </ion-list>
+    <ion-list class="ion-no-padding">
+        <div *ngFor="let dog of Dogs">
+            <ion-item (click)="openModalDogProfile(dog?.id)" lines="none">
+                <ion-thumbnail slot="start">
+                    <img [src]='dog.profilepic'>
+                </ion-thumbnail>
+                <ion-label class="dogsep">
+                    <h3>{{ dog.name }}</h3>
+                    <p>{{ dog.breed }}</p>
+                    <p>{{dog.sex}} &middot; {{ dog.age }} &middot; {{ dog.size }}</p>
+                    <ion-label>
+                        <ion-note>
+                            {{ dog.idPerrera }}
+                        </ion-note>
+                    </ion-label>
+                </ion-label>
+                <ion-note slot="end" class="arrow-icon">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </ion-note>
+            </ion-item>
+        </div>
+    </ion-list>
 </ion-content>
