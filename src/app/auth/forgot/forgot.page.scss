@@ -5,15 +5,23 @@ ion-title {
         margin-left: 52px;
     }
 }
+
 ion-content {
 
-    ion-grid,
-    .header-container {
-        margin-top: 10px;
-        padding: 5px 16px 5px 16px;
-    }
     ion-button {
         margin-top: 10px;
+    }
+
+    .logo {
+        padding: 5px 16px 5px 16px;
+        align-items: center;
+        text-align: center;
+
+
+    }
+
+    .footer {
+        padding-top: 200px;
     }
 }
 

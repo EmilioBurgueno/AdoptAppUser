@@ -7,7 +7,7 @@
 <ion-content>
     <div>
         <!-- <h1>AdoptApp</h1> -->
-        <div class="logo ml-1">
+        <div class="logo ml-3">
             <img src="https://i.ibb.co/h9M02BT/AdoptApp.jpg" width="280" height="280">
         </div>
         <!-- <p class="mb-3 mx-2" style="text-align: center;">¡Entra ya para para comenzar tu búsqueda de un nuevo compañero!
@@ -40,24 +40,22 @@
             <ion-row class="login">
                 <ion-col size="4">
                 </ion-col>
-                <ion-col size="8">
-                    <ion-button size="small" class="forget my-0" expand="block" fill="none" color="primary"
-                        style="color: #3232EA; font-size: xx-small" (click)="forgotPassword()">
+                <ion-col size="8" class="px-0">
+                    <ion-button size="small" class="forget my-0 mx-0 " expand="block" fill="none" color="primary"
+                        style="color:#2E5CEF; font-size: xx-small;" (click)="forgotPassword()">
                         ¿Olvidaste tu Contraseña?</ion-button>
                 </ion-col>
                 <ion-col size="12">
                     <ion-button size="medium" expand="block" fill="solid" color="primary" (click)="onSubmit()"
-                        class="my-2" style="font-size: x-small">Iniciar
-                        Sesión
+                        class="my-2" style="font-size: x-small">Iniciar Sesión
                     </ion-button>
                 </ion-col>
             </ion-row>
-            <ion-row class="my-5" style=" text-align: center;">
+            <ion-row style="text-align: center">
                 <ion-col>
-                    <ion-label style="color: gray; font-size: small">¿Nuevo por aquí? </ion-label>
+                    <ion-label style="color: gray; font-size: small">¿Aún no tiene cuenta? </ion-label>
                     <ion-label (click)="goToSignUp()" class="forget my-0" expand="block" fill="none" color="primary"
-                        style="color:blue; font-size: small;">¡Crea una
-                        cuenta!</ion-label>
+                        style="color:#2E5CEF; font-size: small; font-weight: bold;">¡Regístrate!</ion-label>
                 </ion-col>
             </ion-row>
         </ion-grid>

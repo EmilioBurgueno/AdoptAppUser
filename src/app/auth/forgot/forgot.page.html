@@ -1,6 +1,5 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>Recuperacion de contraseña</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -8,8 +7,12 @@
 </ion-header>
 
 <ion-content>
-  <div class="header-container">
-    <p>Escribe tu correo para mandarte las instrucciones de recuperación.</p>
+  <div class="logo">
+    <img class="displayed" height="150 px" width="150 px" src="/assets/image/lock.jpg">
+    <h5>¿Olvidaste tu contraseña?</h5>
+    <p style="font-size:small; color: gray; text-align: center;">Escribe el correo registrado para <br /> enviar la
+      recuperación de tu
+      contraseña.</p>
   </div>
 
   <form (submit)="sendLink()">
@@ -17,11 +20,22 @@
       <ion-row>
         <ion-col size="12">
           <ion-item>
-            <ion-input type="text" [(ngModel)]="email" placeholder="Correo electrónico" name="email"></ion-input>
+            <ion-input type="text" [(ngModel)]="email" name="email" placeholder="  Correo electronico">
+              <ion-icon name="mail-sharp"></ion-icon>
+            </ion-input>
           </ion-item>
           <ion-button size="small" type="submit" expand="block">Enviar</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
   </form>
+
+  <ion-row class="my-5 footer" style=" text-align: center;">
+    <ion-col>
+      <ion-label style="color: gray; font-size: small">¿Aún no tiene cuenta? </ion-label>
+      <br>
+      <ion-label (click)="goToSignUp()" class="forget my-0" expand="block" fill="none" color="primary"
+        style="color:#2E5CEF; font-size: small; font-weight: bold;">¡Regístrate!</ion-label>
+    </ion-col>
+  </ion-row>
 </ion-content>

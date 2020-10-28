@@ -33,6 +33,10 @@ const routes: Routes = [
     redirectTo: '/tabs/profile',
     pathMatch: 'full'
   },
+  {
+    path: 'dog-profile',
+    loadChildren: () => import('./modals/dog-profile/dog-profile.module').then( m => m.DogProfilePageModule)
+  },
 ];
 
 @NgModule({

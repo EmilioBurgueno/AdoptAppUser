@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-button (click)="goBack()">Cerrar</ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+          <ion-button (click)="deleteDog(dog?.id)">
+              <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+      <ion-title>AdoptApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+      <ion-row>
+          <ion-col>
+              <h1 style="text-align: center;">{{dog?.name}}</h1>
+          </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+          <ion-col>
+              <img [src]='dog?.profilepic'>
+          </ion-col>
+      </ion-row>
+
+      <ion-buttons>
+          <!-- <ion-button (click)="openModalEdit(dog?.id)">
+              <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+          </ion-button> -->
+          <!-- <ion-button (click)="toggleLike()" class="ion-no-padding ion-no-margin" fill="clear">
+              <ion-icon *ngIf="!user?.favourites.includes(dog?.id)" slot="icon-only" name="heart-outline"></ion-icon>
+              <ion-icon *ngIf="user?.favourites.includes(dog?.id)" slot="icon-only" name="heart" class="liked"></ion-icon>
+          </ion-button> -->
+          &nbsp;
+      </ion-buttons>
+
+      <ion-row>
+          <ion-col>
+              <p>Raza: {{dog?.breed}}</p>
+              <p>Sexo: {{dog?.sex}}</p>
+              <p>Tamaño: {{dog?.size}}</p>
+              <p>Edad: {{dog?.age}}</p>
+              <p>Encontrado: {{dog?.fplace | date:"MM/dd/yy" }}</p>
+              <p *ngIf="dog.description">Descripcion: {{dog?.description}}</p>
+              <p *ngIf="dog.collar">Collar: {{dog?.collar}}</p>
+              <p>Status: {{dog?.status}}</p>
+              <p>{{dog?.idPerrera}}</p>
+          </ion-col>
+      </ion-row>
+
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+
+</ion-footer>
