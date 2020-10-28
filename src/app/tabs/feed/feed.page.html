@@ -7,7 +7,7 @@
 <ion-content>
   <ion-list>
       <div *ngFor="let dog of Dogs">
-          <ion-item (click)="openModalDogProfile(dog?.id)">
+          <ion-item (click)="openModalDogProfile(dog?.id)" lines="none">
               <slot name="start">
                   <ion-avatar>
                       <img [src]='dog.profilepic'>
