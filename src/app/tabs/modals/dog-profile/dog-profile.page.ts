@@ -21,13 +21,13 @@ export class DogProfilePage implements OnInit {
   userId: string;
 
   constructor(private dogService: DogService,
-              private authService: AuthService,
-              private userService: UserService,
-              private alertCtrl: AlertController,
-              private navCtrl: NavController,
-              private activatedRouter: ActivatedRoute,
-              private modalCtrl: ModalController,
-              private navParams: NavParams) { }
+    private authService: AuthService,
+    private userService: UserService,
+    private alertCtrl: AlertController,
+    private navCtrl: NavController,
+    private activatedRouter: ActivatedRoute,
+    private modalCtrl: ModalController,
+    private navParams: NavParams) { }
 
   ngOnInit() {
     const dID = this.navParams.get('dID');
@@ -140,6 +140,10 @@ export class DogProfilePage implements OnInit {
         console.log(error);
       });
     }
+  }
+
+  async closeModal() {
+    await this.modalCtrl.dismiss();
   }
 
 }

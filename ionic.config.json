@@ -1,5 +1,7 @@
 {
   "name": "AdoptAppUser",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

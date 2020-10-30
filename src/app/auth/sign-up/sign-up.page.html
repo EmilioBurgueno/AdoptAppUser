@@ -1,6 +1,6 @@
-<ion-header>
+<ion-header class="ion-no-border">
     <ion-toolbar>
-        <ion-title>Crear una cuenta</ion-title>
+        <!-- <ion-title>Crear una cuenta</ion-title> -->
         <ion-buttons slot="start">
             <ion-back-button></ion-back-button>
         </ion-buttons>
@@ -10,78 +10,81 @@
 <ion-content>
     <div class="header-container">
         <!-- <h1>AdoptApp</h1> -->
-        <p class="my-3">¡Registrate para comenzar tu búsqueda de un nuevo compañero!</p>
+        <h5 class="my-2" style="font-weight: bold;">¡Registrate!</h5>
     </div>
 
     <form [formGroup]="signUpForm">
-        <ion-grid>
+        <ion-grid class="px-4">
             <ion-row>
                 <ion-col size="12">
-                    <ion-item>
-                        <ion-label position="floating">Nombre(s)</ion-label>
-                        <ion-input formControlName="fname"></ion-input>
+                    <ion-item class="ion-no-padding">
+                        <ion-label position="stacked">Nombre(s)</ion-label>
+                        <ion-input formControlName="fname" required="true"></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
 
             <ion-row>
                 <ion-col size="12">
-                    <ion-item>
-                        <ion-label position="floating">Apellidos</ion-label>
-                        <ion-input formControlName="lname"></ion-input>
+                    <ion-item class="ion-no-padding">
+                        <ion-label position="stacked">Apellidos</ion-label>
+                        <ion-input formControlName="lname" required="true"></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
 
             <ion-row>
                 <ion-col size="12">
-                    <ion-item>
-                        <ion-label position="floating">Dirección</ion-label>
-                        <ion-input formControlName="address"></ion-input>
+                    <ion-item class="ion-no-padding">
+                        <ion-label position="stacked">Dirección</ion-label>
+                        <ion-input formControlName="address" required="true"></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
 
             <ion-row>
                 <ion-col size="12">
-                    <ion-item>
-                        <ion-label position="floating">Fecha de nacimiento</ion-label>
-                        <ion-datetime formControlName="birthday" displayFormat="DD MM YYYY"></ion-datetime>
+                    <ion-item class="ion-no-padding">
+                        <ion-label position="stacked">Fecha de nacimiento</ion-label>
+                        <ion-datetime formControlName="birthday" displayFormat="DD MM YYYY" type="date" required="true">
+                        </ion-datetime>
                     </ion-item>
                 </ion-col>
             </ion-row>
 
             <ion-row>
                 <ion-col size="12">
-                    <ion-item>
-                        <ion-label position="floating">Número de contacto</ion-label>
-                        <ion-input formControlName="phone"></ion-input>
+                    <ion-item class="ion-no-padding">
+                        <ion-label position="stacked">Número de contacto</ion-label>
+                        <ion-input formControlName="phone" inputmode="numeric" required="true"></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
 
             <ion-row>
                 <ion-col size="12">
-                    <ion-item>
-                        <ion-label position="floating">Nombre de usuario</ion-label>
-                        <ion-input formControlName="username"></ion-input>
+                    <ion-item class="ion-no-padding">
+                        <ion-label position="stacked">Nombre de usuario</ion-label>
+                        <ion-input formControlName="username" required="true"></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
 
             <ion-row>
                 <ion-col size="12">
-                    <ion-item>
-                        <ion-label position="floating">Email</ion-label>
-                        <ion-input formControlName="email"></ion-input>
+                    <ion-item class="ion-no-padding">
+                        <ion-label position="stacked">Correo electrónico</ion-label>
+                        <ion-input formControlName="email" inputmode="email" required="true"></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
 
             <ion-row>
                 <ion-col size="12">
-                    <ion-item class="password">
-                        <ion-input formControlName="password" placeholder="Contraseña" [type]="showPassword ? 'text' : 'password'" clearOnEdit="false"></ion-input>
+                    <ion-item class="password" class="ion-no-padding">
+                        <ion-input formControlName="password" placeholder="Contraseña"
+                            [type]="showPassword ? 'text' : 'password'" clearOnEdit="false" minlength=6 required="true">
+                        </ion-input>
                         <ion-button (click)="onPasswordToggle()" fill="clear">
                             <ion-icon [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
                         </ion-button>
@@ -91,9 +94,12 @@
 
             <ion-row>
                 <ion-col size="12">
-                    <ion-item class="password">
+                    <ion-item class="password" class="ion-no-padding">
                         <!-- <ion-label position="floating">Confirmar Contraseña</ion-label> -->
-                        <ion-input formControlName="confirmPassword" placeholder="Confirmar contraseña" [type]="showConfirmedPassword ? 'text' : 'password'" clearOnEdit="false"></ion-input>
+                        <ion-input formControlName="confirmPassword" placeholder="Confirmar contraseña"
+                            [type]="showConfirmedPassword ? 'text' : 'password'" clearOnEdit="false" minlength=6
+                            required="true">
+                        </ion-input>
                         <ion-button (click)="onConfirmPasswordToggle()" fill="clear">
                             <ion-icon [name]="showConfirmedPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
                         </ion-button>
@@ -103,13 +109,17 @@
 
             <ion-row class="mt-3">
                 <ion-col size="12">
-                    <ion-button color="primary" expand="block" fill="solid" (click)="onSubmit()">Registrarse
+                    <ion-button color="primary" expand="block" fill="solid" (click)="onSubmit()">Registrar
                     </ion-button>
                 </ion-col>
             </ion-row>
-            <ion-row class="my-2">
-                <ion-col size="12">
-                    <ion-button style="text-align: center;" color="primary" expand="block" fill="none" (click)="goToLogin()">¿Ya tienes una cuenta? <br>¡Inicia sesión!</ion-button>
+
+            <ion-row class="my-5 footer" style=" text-align: center;">
+                <ion-col>
+                    <ion-label style="color: gray; font-size: small">¿Ya tienes cuenta? </ion-label>
+                    <br>
+                    <ion-label (click)="goToLogin()" class="forget my-0" expand="block" fill="none" color="primary"
+                        style="color:#2E5CEF; font-size: small; font-weight: bold;">Inicia Sesión</ion-label>
                 </ion-col>
             </ion-row>
         </ion-grid>

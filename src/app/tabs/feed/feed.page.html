@@ -21,7 +21,7 @@
 <ion-content>
     <ion-list class="ion-no-padding">
         <div *ngFor="let dog of Dogs">
-            <ion-item (click)="openModalDogProfile(dog?.id)" lines="none">
+            <ion-item (click)="openModalDogProfile(dog?.id)">
                 <ion-thumbnail slot="start">
                     <img [src]='dog.profilepic'>
                 </ion-thumbnail>
