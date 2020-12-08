@@ -34,8 +34,12 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'dog-profile',
+    path: 'dogprofile',
     loadChildren: () => import('./modals/dog-profile/dog-profile.module').then( m => m.DogProfilePageModule)
+  },
+  {
+    path: 'adoption',
+    loadChildren: () => import('./modals/adoption/adoption.module').then( m => m.AdoptionPageModule)
   },
 ];
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, associateQuery } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators'
-import { Dog } from 'src/models/dog.model';
+import { Dog } from 'models/dog.model';
 import { AngularFireStorage } from '@angular/fire/storage';
 
 

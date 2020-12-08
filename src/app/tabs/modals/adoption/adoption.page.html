@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button (click)="closeModal()">
+          <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+  </ion-buttons>
+    <ion-title>AdoptApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>Confirma los datos de tu solicitud de adopción</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="stacked">Nombre Completo</ion-label>
+          <p>{{ user?.fname }} {{ user?.lname }}</p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="stacked">Fecha de nacimiento</ion-label>
+          <p>{{ user?.birthdate }}</p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="stacked">Direccion</ion-label>
+          <p>{{ user?.address }}</p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="stacked">Correo electronico</ion-label>
+          <p>{{ user?.email }}</p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="stacked">Telefono</ion-label>
+          <p>{{ user?.phone }}</p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button (click)="sendApplication()" expand="block">Mandar solicitud</ion-button>
+
+</ion-content>

@@ -1,7 +1,7 @@
 import { DogProfilePage } from './../modals/dog-profile/dog-profile.page';
 import { NavController, ModalController } from '@ionic/angular';
 import { DogService } from 'src/app/services/dog.service';
-import { Dog } from 'src/models/dog.model';
+import { Dog } from 'models/dog.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
