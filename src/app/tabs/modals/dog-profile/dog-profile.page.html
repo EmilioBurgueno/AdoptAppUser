@@ -32,17 +32,20 @@
             </ion-col>
         </ion-row>
 
-        <ion-buttons>
-            <!-- <ion-button (click)="openModalEdit(dog?.id)">
-              <ion-icon slot="icon-only" name="create-outline"></ion-icon>
-          </ion-button> -->
-            <!-- <ion-button (click)="toggleLike()" class="ion-no-padding ion-no-margin" fill="clear">
-              <ion-icon *ngIf="!user?.favourites.includes(dog?.id)" slot="icon-only" name="heart-outline"></ion-icon>
-              <ion-icon *ngIf="user?.favourites.includes(dog?.id)" slot="icon-only" name="heart" class="liked"></ion-icon>
-          </ion-button> -->
-            &nbsp;
-        </ion-buttons>
-
+        <ion-toolbar>
+            <ion-buttons slot="end">
+                <h5>Adopta a {{dog?.name}}</h5>
+                <ion-button (click)="openModalAdopt(dog?.id)">
+                  <ion-icon slot="icon-only" name="paw-outline"></ion-icon>
+                </ion-button>
+                <!-- <ion-button (click)="toggleLike()" class="ion-no-padding ion-no-margin" fill="clear">
+                  <ion-icon *ngIf="!user?.favourites.includes(dog?.id)" slot="icon-only" name="heart-outline"></ion-icon>
+                  <ion-icon *ngIf="user?.favourites.includes(dog?.id)" slot="icon-only" name="heart" class="liked"></ion-icon>
+                </ion-button> -->
+                <!-- &nbsp; -->
+            </ion-buttons>
+        </ion-toolbar>
+        
         <ion-row>
             <ion-col>
                 <p>Raza: {{dog?.breed}}</p>

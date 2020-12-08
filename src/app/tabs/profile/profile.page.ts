@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { NavController, ModalController, ActionSheetController, AlertController, LoadingController } from '@ionic/angular';
 //import { EditProfilePage } from '../modals/edit-profile/edit-profile.page';
-import { Dog } from 'src/models/dog.model';
+import { Dog } from 'models/dog.model';
 import { DogService } from 'src/app/services/dog.service';
 //import { DogProfilePage } from '../modals/dog-profile/dog-profile.page';
 import { UserService } from 'src/app/services/user.service';
