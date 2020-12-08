@@ -1,5 +1,9 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+</style>
+
 <ion-header class="ion-no-border" class="ion-no-padding">
-    <ion-toolbar>
+    <ion-toolbar class="ion-no-border">
         <ion-buttons slot="start">
             <ion-button>
                 <ion-icon slot="start" name="heart-outline"></ion-icon>
@@ -19,41 +23,41 @@
 
 <ion-content>
     <ion-grid>
-        <ion-row>
-            <ion-col>
-                <h1 style="text-align: center;">{{dog?.name}}</h1>
-            </ion-col>
-        </ion-row>
-
 
         <ion-row>
             <ion-col>
-                <img [src]='dog?.profilepic'>
+                <img class="picture" [src]='dog?.profilepic'>
             </ion-col>
         </ion-row>
 
         <ion-buttons>
-            <!-- <ion-button (click)="openModalEdit(dog?.id)">
-              <ion-icon slot="icon-only" name="create-outline"></ion-icon>
-          </ion-button> -->
-            <!-- <ion-button (click)="toggleLike()" class="ion-no-padding ion-no-margin" fill="clear">
-              <ion-icon *ngIf="!user?.favourites.includes(dog?.id)" slot="icon-only" name="heart-outline"></ion-icon>
-              <ion-icon *ngIf="user?.favourites.includes(dog?.id)" slot="icon-only" name="heart" class="liked"></ion-icon>
-          </ion-button> -->
-            &nbsp;
+
         </ion-buttons>
 
         <ion-row>
-            <ion-col>
-                <p>Raza: {{dog?.breed}}</p>
-                <p>Sexo: {{dog?.sex}}</p>
-                <p>Tamaño: {{dog?.size}}</p>
-                <p>Edad: {{dog?.age}}</p>
-                <p>Encontrado: {{dog?.fplace | date:"MM/dd/yy" }}</p>
-                <p>Descripcion: {{dog?.description}}</p>
-                <p>Collar: {{dog?.collar}}</p>
-                <p>Status: {{dog?.status}}</p>
-                <p>{{dog?.idPerrera}}</p>
+            <ion-col size="12">
+                <h5 class="dog-name">{{dog?.name}}</h5>
+                <p class="dog-description">{{dog?.sex}} &middot; {{dog?.age}} &middot; {{dog?.size}} </p>
+                <p class="dog-description">{{dog?.breed}} / {{dog?.coat}}</p>
+                <p class="dog-description" style="font-weight: bold;">{{dog?.fplace | date:"dd/MM/yy" }}</p>
+            </ion-col>
+            <ion-col size="12">
+                <h5 class="profile-header">ACERCA DE MI</h5>
+                <p class="profile-description">Color: {{dog?.color}}</p>
+                <p class="profile-description">ID Mascota: {{dog?.id}}</p>
+                <h5 class="profile-header">DESCRIPCIÓN</h5>
+                <p class="profile-description">{{dog?.description}}</p>
+                <h5 class="profile-header">FECHA / LUGAR ENCONTRADO</h5>
+                <p class="profile-description">Fecha en que se encontro: {{dog?.found}}</p>
+                <p class="profile-description">Lugar donde se encontro: {{dog?.fplace}}</p>
+                <h5 class="profile-header">ORGANIZACIÓN</h5>
+                <p class="profile-description">Rescue Me Tijuana</p>
+                <h5 class="profile-header">PROCESO DE ADOPCIÓN</h5>
+                <p class="profile-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta neque,
+                    nesciunt possimus minus consectetur aliquam sunt repellat architecto voluptas ullam recusandae,
+                    fugiat quod nisi. Natus vero quod ex dicta saepe.</p>
+
+
             </ion-col>
         </ion-row>
 
