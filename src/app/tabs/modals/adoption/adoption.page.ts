@@ -91,7 +91,7 @@ export class AdoptionPage implements OnInit {
   async sendApplication() {
     await this.presentLoading('Guardando el perfil...');
     this.test = this.dog.adoptees
-    this.test.push(this.user.id)
+    this.test.push(this.user.fname)
     const updatedDog = {
       adoptees: this.test
     };
