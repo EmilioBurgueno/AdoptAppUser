@@ -7,6 +7,15 @@ ion-label {
 }
 
 ion-content {
+
+    .arrow-icon {
+        font-size: 15px;
+        margin-top: 25px;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+
+    
     ion-thumbnail {
         width: 90px;
         height: 90px;
@@ -19,12 +28,7 @@ ion-content {
         }
     }
 
-    .arrow-icon {
-        font-size: 15px;
-        margin-top: 25px;
-        margin-left: 0px;
-        padding-left: 0px;
-    }
+    
 
     ion-item {
         --padding-end: 0px;
