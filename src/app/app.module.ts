@@ -14,6 +14,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { EditprofilePageModule } from './tabs/settingssub/editprofile/editprofile.module';
+import { ChangepassPageModule } from './tabs/settingssub/changepass/changepass.module';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +31,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
+    ChangepassPageModule,
+    EditprofilePageModule,
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,95 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title class="px-0" style="text-align: center; font-size: medium;">AdoptApp</ion-title>
+        <!-- <ion-buttons slot="primary">
+            <ion-button (click)="goToFeed()">
+                <ion-icon name="paw-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons> -->
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-grid>
+
+        <ion-row>
+            <ion-col size="12">
+                <h3 class="headText">Cambiar contraseña</h3>
+            </ion-col>
+        </ion-row>
+
+        <form [formGroup]="editUserForm" *ngIf="editUserForm">
+
+            <ion-row class="formRow">
+                <ion-col size="12">
+                    <ion-label class="lbl">Ingresa tu contraseña actual</ion-label>
+                    <ion-item class="password">
+                        <ion-input formControlName="cPassword" placeholder="Contraseña Actual"
+                            [type]="showCurrentPassword ? 'text' : 'password'" clearOnEdit="false"></ion-input>
+                        <ion-button (click)="onCurrentPasswordToggle()" fill="clear">
+                            <ion-icon [name]="showCurrentPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+                        </ion-button>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row class="formRow">
+                <ion-col size="12">
+                    <ion-text class="lbl">Cambio de Email</ion-text>
+                    <ion-item class="password">
+                        <ion-input formControlName="email"></ion-input>
+                    </ion-item>
+                    <section>
+                        <ion-button class="formButton" (click)="updateEmail()" expand="block" fill="clear">
+                            Cambiar Email
+                        </ion-button>
+
+                    </section>
+                </ion-col>
+            </ion-row>
+
+            <ion-row class="formRow">
+                <ion-col size="12">
+                    <ion-label class="lbl">Cambio de Contraseña</ion-label>
+                    <ion-item class="password">
+                        <ion-input formControlName="nPassword" placeholder="Nueva Contraseña"
+                            [type]="showPassword ? 'text' : 'password'" clearOnEdit="false"></ion-input>
+                        <ion-button (click)="onPasswordToggle()" fill="clear">
+                            <ion-icon [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+                        </ion-button>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row class="formRow">
+                <ion-col size="12">
+                    <ion-item class="password">
+                        <ion-input formControlName="ncPassword" placeholder="Confirmar Nueva Contraseña"
+                            [type]="showConfirmedPassword ? 'text' : 'password'" clearOnEdit="false"></ion-input>
+                        <ion-button (click)="onConfirmPasswordToggle()" fill="clear">
+                            <ion-icon [name]="showConfirmedPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+                        </ion-button>
+                    </ion-item>
+                    <section>
+                        <ion-button class="formButton" (click)="updatePassword()" expand="block" fill="clear">Cambiar
+                            Contraseña</ion-button>
+                    </section>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col size="12">
+                    <section>
+                        <ion-button color="danger" (click)="goBack()" expand="block">Cancelar</ion-button>
+                    </section>
+                </ion-col>
+            </ion-row>
+        </form>
+
+    </ion-grid>
+
+</ion-content>

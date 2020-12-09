@@ -22,7 +22,8 @@ export class ProfilePage implements OnInit {
   loadingIndicator: any;
   loading = false
 
-  constructor(private authService: AuthService,
+  constructor(
+    private authService: AuthService,
     private userService: UserService,
     private modalCtrl: ModalController,
     private navCtrl: NavController,
@@ -33,8 +34,8 @@ export class ProfilePage implements OnInit {
   async ngOnInit() {
     await this.authService.user$.subscribe((user) => {
       this.user = user;
-      this.getFavourites()
-    })
+      this.getFavourites();
+    });
   }
 
   getFavourites() {
@@ -71,7 +72,7 @@ export class ProfilePage implements OnInit {
   //   return await modal.present();
   // }
 
-  
+
 
   // async getPicture(source: CameraSource): Promise<boolean> {
   //   const image = await Plugins.Camera.getPhoto({
